@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class SubList {
-
     public static Scanner sc = new Scanner(System.in);
 
     public static void printSubs(List<Subscriber> list){

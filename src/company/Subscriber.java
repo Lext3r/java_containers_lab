@@ -1,7 +1,6 @@
 package company;
 
 public class Subscriber {
-
     private String name;
     private String sName;
     private String phone;
