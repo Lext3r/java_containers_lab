@@ -1,12 +1,9 @@
 package company;
 
-
-import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-
     public static Scanner sc = new Scanner(System.in);
     public static List<Subscriber> list = FileReader.getSubscribers("C:\\Users\\Alex\\IdeaProjects\\java_containers_lab\\src\\company\\subscribers");
 
