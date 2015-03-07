@@ -21,10 +21,10 @@ public class SubList {
         try {
             list.remove(Integer.valueOf(sc.next())-1);
         } catch (Exception e){
-            System.out.println("Wrong Input. Try again.");
+            System.out.println("Wrong Input. Try again.\n");
             return;
         }
-        System.out.println("Removal completed");
+        System.out.println("Removal completed\n");
     }
 
     public static void findSubs(List<Subscriber> list){
@@ -43,7 +43,7 @@ public class SubList {
                 findSubPlan(list);
                 break;
             default:
-                System.out.println("Incorrect input. Try again!");
+                System.out.println("Incorrect input. Try again!\n");
                 break;
         }
     }
@@ -56,7 +56,7 @@ public class SubList {
                 return sub;
             }
         }
-        System.out.println("No matches found");
+        System.out.println("No matches found\n");
         return null;
     }
 
@@ -68,13 +68,13 @@ public class SubList {
                 return sub;
             }
         }
-        System.out.println("No matches found");
+        System.out.println("No matches found\n");
         return null;
     }
 
     public static void findSubPlan(List<Subscriber> list){
         int f = 0;
-        String plan = Payment.choosePlan();
+        String plan = choosePlan();
         for (Subscriber sub : list){
             if(plan.compareTo(sub.getPlan()) == 0){
                 f = 1;
@@ -82,7 +82,7 @@ public class SubList {
             }
         }
         if (f == 0){
-            System.out.println("No matches found");
+            System.out.println("No matches found\n");
         }
     }
 
@@ -98,7 +98,39 @@ public class SubList {
             phone = sc.next();
         }
         System.out.println("Input sub plan:");
-        String plan = Payment.choosePlan();
+        String plan = choosePlan();
         list.add(new Subscriber(name, sName, phone, plan, "0"));
+        System.out.println("Subscriber added successfully.\n");
+    }
+
+    public static String choosePlan(){
+        System.out.println("1) Unlimited");
+        System.out.println("2) Combined");
+        System.out.println("3) Timed-Based");
+        switch (Integer.valueOf(sc.next())) {
+            case 1:
+                return ("Unlimited");
+            case 2:
+                return ("Combined");
+            case 3:
+                return ("Time-based");
+            default:
+                System.out.println("Incorrect input. Try again!\n");
+                return choosePlan();
+        }
+    }
+
+    public static Subscriber chooseSubscriber(List<Subscriber> list){
+        Subscriber s;
+        System.out.println("List of subscribers:");
+        SubList.printSubs(list);
+        System.out.println("Choose number of the subscriber");
+        try {
+            s = list.get(Integer.valueOf(sc.next())-1);
+        } catch (Exception e){
+            System.out.println("Wrong Input. Try again.\n");
+            return chooseSubscriber(list);
+        }
+        return s;
     }
 }
