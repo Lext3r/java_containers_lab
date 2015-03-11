@@ -6,6 +6,10 @@ import java.util.Scanner;
 public class SubList {
     public static Scanner sc = new Scanner(System.in);
 
+    /**
+     * Выводит информацию о всех абонентах в списке.
+     * @param list
+     */
     public static void printSubs(List<Subscriber> list){
         for (Subscriber sub : list){
             System.out.println((list.indexOf(sub) + 1) + ")" + sub.getName() + " " + sub.getsName() + " " +
@@ -14,6 +18,10 @@ public class SubList {
         System.out.println();
     }
 
+    /**
+     * Удаляет выбранного абонента из списка.
+     * @param list
+     */
     public static void deleteSub(List<Subscriber> list){
         System.out.println("List of subscribers:");
         printSubs(list);
@@ -27,6 +35,13 @@ public class SubList {
         System.out.println("Removal completed\n");
     }
 
+    /**
+     *Ищет и выводит информацию о абонентах, выбранных по одному из критериев:
+     * 1)Номер телефона.
+     * 2)Имя.
+     * 3)Тарифный план.
+     * @param list
+     */
     public static void findSubs(List<Subscriber> list){
         System.out.println("Choose criteria:");
         System.out.println("1) Phone number");
@@ -86,6 +101,10 @@ public class SubList {
         }
     }
 
+    /**
+     * Добавляет в список нового абонента.
+     * @param list
+     */
     public static void addSubscriber(List<Subscriber> list){
         System.out.println("Input sub name:");
         String name = sc.next();

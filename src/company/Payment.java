@@ -2,8 +2,11 @@ package company;
 
 import java.util.List;
 import java.util.Scanner;
-
 public class Payment {
+    /**
+     * @param s - абонент
+     * @return сумма, которую абонент должен оплатить, в зависимости от указанного тарифного плана.
+     */
     public static double getPayment(Subscriber s){
         if (s.getPlan().compareTo("Unlimited") == 0)
             return 420;

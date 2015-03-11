@@ -8,6 +8,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class FileReader {
+    /**
+     * Формирует начальную список абонентов из файлов, указанных в аргументах CLI при запуске программы.
+     * @param args
+     * @return list - список абонентов.
+     */
     public static List<Subscriber> getSubscribers(String[] args) {
         List<Subscriber> list = new ArrayList<Subscriber>();
         Scanner sc;

@@ -3,7 +3,7 @@ package company;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
+class Main {
     public static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -41,7 +41,7 @@ public class Main {
             case 4:  SubList.printSubs(list);
                 break;
             case 5:
-                System.out.println(Payment.getPayment(SubList.chooseSubscriber(list)));
+                System.out.println("Payment for last month: "+Payment.getPayment(SubList.chooseSubscriber(list))+"\n");
                 break;
             case 6:  System.exit(-1);
                 break;
